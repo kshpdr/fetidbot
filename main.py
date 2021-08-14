@@ -8,7 +8,7 @@ bot = telebot.TeleBot('1935288146:AAEhOpae8frmTLSKwRxW80phpSWz3ikklpg')
 url = "https://api.telegram.org/bot1935288146:AAEhOpae8frmTLSKwRxW80phpSWz3ikklpg/"
 
 path = "/Users/koselev/Desktop/vanya"
-files = os.listdir(path)
+#files = os.listdir(path)
 
 # class BotHandler:
 #
@@ -50,11 +50,11 @@ def start_command(message):
 # 	bot.reply_to(message, message.text)
 
 
-@bot.message_handler(func=lambda m: True)
-def send_photo(message):
-    d = random.choice(files)
-    bot.send_message(message.chat.id, "Мяу!")
-    bot.send_photo(message.chat.id, photo=open(f"/Users/koselev/Desktop/vanya/{d}", "rb"))
+# @bot.message_handler(func=lambda m: True)
+# def send_photo(message):
+#     d = random.choice(files)
+#     bot.send_message(message.chat.id, "Мяу!")
+#     bot.send_photo(message.chat.id, photo=open(f"/Users/koselev/Desktop/vanya/{d}", "rb"))
 
 
 bot.polling()
