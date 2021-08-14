@@ -58,5 +58,4 @@ def echo_all(message):
 #     bot.send_photo(message.chat.id, photo=open(f"/Users/koselev/Desktop/vanya/{d}", "rb"))
 
 
-#bot.polling()
-bot.infinity_polling(True)
+bot.polling()
