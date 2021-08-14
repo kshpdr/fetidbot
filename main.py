@@ -45,9 +45,9 @@ def start_command(message):
     bot.send_message(message.chat.id, "Привет, меня зовут Ваня! На самом деле, вонючка. Потому что воняю. Если тебе грустно, я подниму тебе настроение своей мордашкой!\n "
                                       "\nПока что я немного глупая и особо ничего не умею, но ты можешь написать мне что угодно, я тебя порадую. Правда моя мордашка придет не сразу, а секунд через пять, но как говорится: кто не терпит, тот не русский.")
 
-# @bot.message_handler(func=lambda m: True)
-# def echo_all(message):
-# 	bot.reply_to(message, message.text)
+@bot.message_handler(func=lambda m: True)
+def echo_all(message):
+	bot.reply_to(message, message.text)
 
 
 # @bot.message_handler(func=lambda m: True)
