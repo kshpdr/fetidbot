@@ -8,8 +8,8 @@ import logging
 #import requests
 #import datetime
 
-bot = telebot.TeleBot('1935288146:AAEhOpae8frmTLSKwRxW80phpSWz3ikklpg')
-url = "https://api.telegram.org/bot1935288146:AAEhOpae8frmTLSKwRxW80phpSWz3ikklpg/"
+bot = telebot.TeleBot('1935288146:AAE7dB2WXQI-wdvrQlB9TY3wPFshpo0yCjE')
+url = "https://api.telegram.org/bot1935288146:AAE7dB2WXQI-wdvrQlB9TY3wPFshpo0yCjE/"
 
 path = "/Users/koselev/Desktop/vanya"
 #files = os.listdir(path)
@@ -69,7 +69,7 @@ if "HEROKU" in list(os.environ.keys()):
 
     server = Flask(__name__)
 
-    @server.route("/1935288146:AAEhOpae8frmTLSKwRxW80phpSWz3ikklpg", methods=['POST'])
+    @server.route("https://api.telegram.org/bot1935288146:AAE7dB2WXQI-wdvrQlB9TY3wPFshpo0yCjE/", methods=['POST'])
     def getMessage():
         bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
         return "!", 200
