@@ -69,7 +69,7 @@ if "HEROKU" in list(os.environ.keys()):
 
     server = Flask(__name__)
 
-    @server.route("https://api.telegram.org/bot***REMOVED***/", methods=['POST'])
+    @server.route("/", methods=['POST'])
     def getMessage():
         bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
         return "!", 200
