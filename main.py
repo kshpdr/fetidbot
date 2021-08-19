@@ -5,6 +5,8 @@ import random
 from flask import Flask, request
 import logging
 
+from PIL import Image
+
 #import requests
 #import datetime
 
@@ -58,7 +60,11 @@ def start_command(message):
 @bot.message_handler(func=lambda m: True)
 def send_photo(message):
     d = random.choice(files)
-    bot.send_message(message.chat.id, "Мяу!")
+
+    img = Image.open("photos/camphoto_342241519.JPG")
+    comment = img.info["comment"].decode("utf-8")
+
+    bot.send_message(message.chat.id, comment)
     bot.send_photo(message.chat.id, photo=open(f"photos/{d}", "rb"))
 
 
