@@ -11,8 +11,8 @@ import logging
 bot = telebot.TeleBot('1935288146:AAE7dB2WXQI-wdvrQlB9TY3wPFshpo0yCjE')
 url = "https://api.telegram.org/bot1935288146:AAE7dB2WXQI-wdvrQlB9TY3wPFshpo0yCjE/"
 
-path = "/Users/koselev/Desktop/vanya"
-#files = os.listdir(path)
+path = "photos"
+files = os.listdir(path)
 
 # class BotHandler:
 #
@@ -50,16 +50,16 @@ def start_command(message):
                                       "\nПока что я немного глупая и особо ничего не умею, но ты можешь написать мне что угодно, я тебя порадую. Правда моя мордашка придет не сразу, а секунд через пять, но как говорится: кто не терпит, тот не русский.")
 
 
-@bot.message_handler(func=lambda m: True)
-def echo_all(message):
-    bot.reply_to(message, message.text)
-
-
 # @bot.message_handler(func=lambda m: True)
-# def send_photo(message):
-#     d = random.choice(files)
-#     bot.send_message(message.chat.id, "Мяу!")
-#     bot.send_photo(message.chat.id, photo=open(f"/Users/koselev/Desktop/vanya/{d}", "rb"))
+# def echo_all(message):
+#     bot.reply_to(message, message.text)
+
+
+@bot.message_handler(func=lambda m: True)
+def send_photo(message):
+    d = random.choice(files)
+    bot.send_message(message.chat.id, "Мяу!")
+    bot.send_photo(message.chat.id, photo=open(f"photos/{d}", "rb"))
 
 
 # Проверим, есть ли переменная окружения Хероку (как ее добавить смотрите ниже)
