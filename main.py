@@ -60,11 +60,8 @@ def start_command(message):
 @bot.message_handler(func=lambda m: True)
 def send_photo(message):
     d = random.choice(files)
-
     comment = Image.open(f"photos/{d}").info["comment"].decode("utf-8")
-
-    bot.send_message(message.chat.id, comment)
-    bot.send_photo(message.chat.id, photo=open(f"photos/{d}", "rb"))
+    bot.send_photo(message.chat.id, photo=open(f"photos/{d}", "rb"), caption=comment)
 
 
 # Проверим, есть ли переменная окружения Хероку (как ее добавить смотрите ниже)
