@@ -76,7 +76,7 @@ def insert_photo(chat_id, message, photo):
     # if not, addr to database and update photos amount
     cur.execute("INSERT INTO sent_photos (chat_id, photo_name)\
                     VALUES (%d, '%s') \
-                ON CONFLICT ON CONSTRAINT no DO NOTHING" % (chat_id, photo))
+                ON CONFLICT ON CONSTRAINT unique_photos DO NOTHING" % (chat_id, photo))
     cur.execute("UPDATE users SET total_photos = total_photos + 1 WHERE chat_id = '%d'" % chat_id)
     conn.commit()
     return True
