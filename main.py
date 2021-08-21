@@ -16,6 +16,7 @@ from PIL import Image
 bot = telebot.TeleBot('***REMOVED***')
 url = "https://api.telegram.org/bot***REMOVED***/"
 
+# for local use
 # conn = psycopg2.connect(database="fetidbot", user="denis", password="KatzeVanya", host="127.0.0.1", port="5432")
 DATABASE_URL = os.environ['postgresql-graceful-08047']
 conn =  psycopg2.connect(DATABASE_URL, sslmode='require')
