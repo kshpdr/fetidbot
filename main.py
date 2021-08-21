@@ -19,7 +19,7 @@ url = "https://api.telegram.org/bot***REMOVED***/"
 # for local use
 # conn = psycopg2.connect(database="fetidbot", user="denis", password="KatzeVanya", host="127.0.0.1", port="5432")
 DATABASE_URL = os.environ['DATABASE_URL']
-conn =  psycopg2.connect(DATABASE_URL, sslmode='require')
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 cur = conn.cursor()
 
 path = "photos"
@@ -69,7 +69,7 @@ def insert_photo(chat_id, message, photo):
     # checking whether photo has been already sent
     row = cur.fetchone()
     while row is not None:
-        if row[1] == photo:
+        if row[1] == photo and row[0] == chat_id:
             return False
         row = cur.fetchone()
 
