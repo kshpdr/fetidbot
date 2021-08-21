@@ -18,7 +18,7 @@ url = "https://api.telegram.org/bot***REMOVED***/"
 
 # for local use
 # conn = psycopg2.connect(database="fetidbot", user="denis", password="KatzeVanya", host="127.0.0.1", port="5432")
-DATABASE_URL = os.environ['postgresql-graceful-08047']
+DATABASE_URL = os.environ['DATABASE_URL']
 conn =  psycopg2.connect(DATABASE_URL, sslmode='require')
 cur = conn.cursor()
 
