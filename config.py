@@ -1,0 +1,10 @@
+telegram_token = "1935288146:AAE7dB2WXQI-wdvrQlB9TY3wPFshpo0yCjE"
+telegram_url = "https://api.telegram.org/bot1935288146:AAE7dB2WXQI-wdvrQlB9TY3wPFshpo0yCjE/"
+database_url = "postgres://xvnpluldefhnsl:b333509ffaf5eb7bbc0cc01a44a783778bd6ff9c21b38305685f1bef7287b662@ec2-54-156-60-12.compute-1.amazonaws.com:5432/d7ikump45hhmid"
+app_url = "https://vast-ravine-49209.herokuapp.com"
+
+client_id = "fc2d17087faeca7"
+client_secret = "622504c8b2432e819ec42aca06c339f2dbd807d6"
+access_token = "80b941c06fad0cd4ee087641332c01694ef38513"
+refresh_token = "7cbec8b25d1dbad6e08f076bcbf2a7e1db123474"
+album_id = "u71qAT0"
