@@ -36,7 +36,7 @@ def insert_photo(chat_id, message, photo_url):
     # checking whether photo has been already sent
     row = cur.fetchone()
     while row is not None:
-        if row[2] == photo_url and row[0] == chat_id:
+        if row[1] == photo_url and row[0] == chat_id:
             return False
         row = cur.fetchone()
 
