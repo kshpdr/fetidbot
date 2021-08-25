@@ -94,6 +94,15 @@ def upload_photo(message):
         'name': 'fetidbot',
     }
     image = client.upload_from_url(file_url, config=configs, anon=False)
+
+    cur.execute("SELECT COUNT(*) FROM photos")
+    total = cur.fetchone()[0]  # number of photos
+
+    cur.execute("SELECT chat_id FROM users WHERE total_photos >= %d" % total)
+    users_to_update = cur.fetchone()
+    for user in users_to_update:
+        bot.send_message(user, "Архив снова пополнен. Напиши мне!")
+
     cur.execute("INSERT INTO photos VALUES ('%s', '%s');" % (image['link'], message.caption))
     conn.commit()
     bot.send_message(message.chat.id, "Архив вонючкинсов пополнен!")
