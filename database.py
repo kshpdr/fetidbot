@@ -32,7 +32,7 @@ def insert_user(chat_id, message):
 
 # inserting chat_id and photo_name in data base
 def insert_photo(chat_id, message, photo_url):
-    cur.execute("SELECT * FROM sent_photos")
+    cur.execute("SELECT * FROM photos_sent")
     # checking whether photo has been already sent
     row = cur.fetchone()
     while row is not None:
