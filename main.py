@@ -26,8 +26,8 @@ url = config.telegram_url
 conn = psycopg2.connect(config.database_url, sslmode='require')
 cur = conn.cursor()
 
-path = "photos"
-files = os.listdir(path)
+# path = "photos"
+# files = os.listdir(path)
 
 client = ImgurClient(config.client_id, config.client_secret, config.access_token, config.refresh_token)
 
