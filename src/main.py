@@ -2,8 +2,8 @@ import os
 import telebot
 import random
 import psycopg2
-# import env_config as config
-import local_config as config
+import env_config as config
+# import local_config as config
 
 # environment for starting server and webhook
 from flask import Flask, request
