@@ -133,4 +133,4 @@ dmypy.json
 #Others
 .DS_Store
 /photos
-#config.py
+local_config.py
