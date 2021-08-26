@@ -2,13 +2,15 @@ import os
 import telebot
 import random
 import psycopg2
-import config
+import env_config as config
+# import local_config as config
 
 # environment for starting server and webhook
 from flask import Flask, request
 import logging
 
 # for taking comments out from the photos
+# was necessary for the version without data base
 from PIL import Image
 import requests
 from imgurpython import ImgurClient
