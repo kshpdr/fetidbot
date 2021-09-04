@@ -185,7 +185,7 @@ def upload_voice(message):
 
 
 # Setup for scheduled messages
-schedule.every().day.at("23:46").do(bc.start_birthday)
+schedule.every().day.at("23:56").do(bc.start_birthday)
 Thread(target=bc.schedule_checker).start()
 
 
