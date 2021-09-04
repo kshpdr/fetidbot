@@ -18,8 +18,8 @@ import posixpath
 import urllib.parse
 
 # for uploading and downloading files from/to google drive
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+# from pydrive.auth import GoogleAuth
+# from pydrive.drive import GoogleDrive
 
 # local imports from other files
 from database import insert_user, insert_photo
@@ -185,7 +185,7 @@ def upload_voice(message):
 
 
 # Setup for scheduled messages
-schedule.every().day.at("23:26").do(bc.start_birthday)
+schedule.every().day.at("23:43").do(bc.start_birthday)
 Thread(target=bc.schedule_checker).start()
 
 
