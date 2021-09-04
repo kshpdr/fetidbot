@@ -1,7 +1,8 @@
 from threading import Thread
 from time import sleep
 import schedule
-import local_config as config
+# import local_config as config
+import env_config as config
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from imgurpython import ImgurClient
