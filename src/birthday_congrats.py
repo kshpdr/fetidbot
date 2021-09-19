@@ -1,13 +1,13 @@
 from threading import Thread
 from time import sleep
 import schedule
-# import local_config as config
-import env_config as config
+import local_config as config
+# import env_config as config
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from imgurpython import ImgurClient
 
-id = 206662948
+id = 189636044
 bot = telebot.TeleBot(config.telegram_token)
 client = ImgurClient(config.client_id, config.client_secret, config.access_token, config.refresh_token)
 
@@ -47,6 +47,7 @@ def schedule_checker():
 
 def start_birthday():
     bot.send_message(id, "Вот это да! Бац, и тебе 20. Пожилая шокобрётхен получается. Начни поздравление командой /oldbutgold")
+    bot.send_message(206662948, "Вот это да! Бац, и тебе 20. Пожилая шокобрётхен получается. Начни поздравление командой /oldbutgold")
     return schedule.CancelJob
 
 

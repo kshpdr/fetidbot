@@ -1,6 +1,6 @@
 import psycopg2
-import env_config as config
-# import local_config as config
+# import env_config as config
+import local_config as config
 
 conn = psycopg2.connect(config.database_url, sslmode='require')
 cur = conn.cursor()

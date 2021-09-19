@@ -2,8 +2,8 @@ import os
 import telebot
 import random
 import psycopg2
-import env_config as config
-# import local_config as config
+# import env_config as config
+import local_config as config
 
 # environment for starting server and webhook
 from flask import Flask, request
@@ -118,7 +118,7 @@ def start_command(message):
 @bot.message_handler(commands=['oldbutgold'])
 def birthday(message):
     comment = "Чтобы скушно не было, будем разбавлять мои гениальные сообщения не менее гениальными фотографиями! На этой например я успешно парадирую вонючку..."
-    bot.send_photo(206662948, photo="https://imgur.com/rNFXNOB", caption=comment, reply_markup=bc.gen_markup())
+    bot.send_photo(189636044, photo="https://imgur.com/rNFXNOB", caption=comment, reply_markup=bc.gen_markup())
     global counter
     counter = 1
 
@@ -185,7 +185,7 @@ def upload_voice(message):
 
 
 # Setup for scheduled messages
-schedule.every().day.at("23:56").do(bc.start_birthday)
+schedule.every().day.at("00:00").do(bc.start_birthday)
 Thread(target=bc.schedule_checker).start()
 
 
